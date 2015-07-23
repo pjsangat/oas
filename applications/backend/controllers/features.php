@@ -53,4 +53,49 @@ class Features extends MY_Controller {
         $this->mViewData['crud_data'] = $crud->render();
     }
 
+    public function facilities() {
+
+        // CRUD table
+        $crud = generate_crud('facilities');
+        $crud->columns('name', 'active', 'created_at');
+//        $crud->unset_add_fields('created_by', 'created_at', 'updated_by', 'updated_at');
+//        $crud->unset_edit_fields('created_by', 'created_at', 'updated_by', 'updated_at');
+
+//        $crud->callback_before_insert(array($this, 'callback_before_create_user'));
+
+        $this->mTitle = "Features - Facilities";
+        $this->mViewFile = '_partial/crud';
+        $this->mViewData['crud_data'] = $crud->render();
+    }
+
+    public function buildings() {
+
+        // CRUD table
+        $crud = generate_crud('buildings');
+        $crud->columns('name', 'active', 'created_at');
+//        $crud->unset_add_fields('created_by', 'created_at', 'updated_by', 'updated_at');
+//        $crud->unset_edit_fields('created_by', 'created_at', 'updated_by', 'updated_at');
+
+//        $crud->callback_before_insert(array($this, 'callback_before_create_user'));
+
+        $this->mTitle = "Features - Buildings";
+        $this->mViewFile = '_partial/crud';
+        $this->mViewData['crud_data'] = $crud->render();
+    }
+
+    public function equipments() {
+
+        // CRUD table
+        $crud = generate_crud('equipments');
+        $crud->columns('name', 'active', 'created_at');
+//        $crud->unset_add_fields('created_by', 'created_at', 'updated_by', 'updated_at');
+//        $crud->unset_edit_fields('created_by', 'created_at', 'updated_by', 'updated_at');
+
+//        $crud->callback_before_insert(array($this, 'callback_before_create_user'));
+
+        $this->mTitle = "Features - Equipments";
+        $this->mViewFile = '_partial/crud';
+        $this->mViewData['crud_data'] = $crud->render();
+    }
+
 }

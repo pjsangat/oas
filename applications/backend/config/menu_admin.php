@@ -47,6 +47,9 @@ $config['menu'] = array(
 		'children'  => array(
 			'Classrooms'		=> site_url('features/classroom'),
 			'Furnitures'		=> site_url('features/furnitures'),
+			'Facilities'		=> site_url('features/facilities'),
+			'Buildings'		=> site_url('features/buildings'),
+			'Equipments'		=> site_url('features/equipments'),
 //			'Demo 3'		=> site_url('example/demo/3'),
 		)
 	),

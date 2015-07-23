@@ -12,8 +12,8 @@ $config['protocol'] = 'smtp';
 $config['smtp_host'] = 'smtp.mandrillapp.com';
 $config['smtp_port'] = '587';
 $config['smtp_timeout'] = '30';
-$config['smtp_user'] = 'username';
-$config['smtp_pass'] = 'password';
+$config['smtp_user'] = 'pjsangat@gmail.com';
+$config['smtp_pass'] = 'Am5_rYsjRD16bzvsKRYhyA';
 
 // Mailgun
 /*

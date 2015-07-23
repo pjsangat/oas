@@ -43,11 +43,11 @@ class Account extends MY_Controller {
 				$user = $this->users->get($user_id);
 
 				// send activation email (make sure config/email.php is properly set first)
-				/*
+				
 				$to_name = $user['first_name'].' '.$user['last_name'];
 				$subject = 'Account Activation';
 				send_email($user['email'], $to_name, $subject, 'signup', $user);
-				*/
+				
 
 				// redirect with success message
 				set_alert('success', 'Thanks for signing up! You will receive a email shortly to activate your account.');
@@ -65,45 +65,51 @@ class Account extends MY_Controller {
 	{
 		$this->mTitle = "Login";
 		$this->mViewFile = 'account/login';
-		
-		if ( validate_form() )
-		{
-			$email = $this->input->post('email');
-			$password = $this->input->post('password');
-			$user = $this->users->get_by(array(
-				'email'		=> $email,
-				'active'	=> 1
-			));
+                
+		if( isset($this->session->userdata['user'])){
+                    redirect('search');
+                    exit;
+                }else{
+                    if ( validate_form() )
+                    {
+                            $email = $this->input->post('email');
+                            $password = $this->input->post('password');
+                            $user = $this->users->get_by(array(
+                                    'email'		=> $email,
+                                    'active'	=> 1
+                            ));
 
-			if ( !empty($user) )
-			{
-				// "remember me"
-				if ( $this->input->post('remember') )
-				{
-					$this->session->sess_expire_on_close = FALSE;
-					$this->session->sess_update();
-				}
+                            if ( !empty($user) )
+                            {
+                                    // "remember me"
+                                    if ( $this->input->post('remember') )
+                                    {
+                                            $this->session->sess_expire_on_close = FALSE;
+                                            $this->session->sess_update();
+                                    }
 
-				// check password
-				if ( verify_pw($password, $user['password']) )
-				{
-					// limited fields to store in session
-					$fields = array('id', 'role', 'first_name', 'last_name', 'email', 'created_at');
-					$user_data = elements($fields, $user);
-					login_user($user_data);
+                                    // check password
+                                    if ( verify_pw($password, $user['password']) )
+                                    {
+                                            // limited fields to store in session
+                                            $fields = array('id', 'role', 'first_name', 'last_name', 'email', 'created_at');
+                                            $user_data = elements($fields, $user);
+                                            login_user($user_data);
 
-					// success
-					set_alert('success', 'Login success.');
-					redirect('home');
-					exit;
-				}
-			}
+                                            // success
+                                            set_alert('success', 'Login success.');
+                                            redirect('search');
+                                            exit;
+                                    }
+                            }
 
-			// failed
-			$this->session->set_flashdata('form_fields', array('email' => $email));
-			set_alert('danger', 'Invalid Login.');
-			redirect('account/login');
-		}
+                            // failed
+                            $this->session->set_flashdata('form_fields', array('email' => $email));
+                            set_alert('danger', 'Invalid Login.');
+                            redirect('account/login');
+                    }
+                }
+                
 	}
 
 	// Account activation
@@ -161,12 +167,12 @@ class Account extends MY_Controller {
 				));
 
 				// send Reset Password email (make sure config/email.php is properly set first)
-				/*
+				
 				$to_name = $user['first_name'].' '.$user['last_name'];
 				$subject = 'Reset Password';
 				$user['forgot_password_code'] = $forgot_password_code;
 				send_email($user['email'], $to_name, $subject, 'reset_password', $user);
-				*/
+				
 
 				// success
 				set_alert('success', 'A email is sent to you to reset your password.');

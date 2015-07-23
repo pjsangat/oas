@@ -4,11 +4,12 @@
 
     <?php $this->load->view('_partial/header'); ?>
 
-    <div class="content-header"></div>
 
     <section class="content">
 
         <div class="wrap">
+            <div class="content-header"></div>
+            
             <div class="content-bottom">
                 {body}
 

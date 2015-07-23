@@ -14,7 +14,7 @@
 
                 <div class="header-bottom">
                     <div class="logo">
-                        <h1><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/images/frontend/ADMU_left 2.png'); ?>" width="528" height="117"></a></h1>
+                        <h1><a href="<?php echo base_url(); ?>"><img src="<?php //echo base_url('assets/images/frontend/ADMU_left 2.png'); ?>" width="528" height="117"></a></h1>
                     </div>
                     <div class="clear"></div> 
                 </div>

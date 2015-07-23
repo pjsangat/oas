@@ -16,14 +16,14 @@ function random_pw($length = 10)
 function hash_pw($plain_pw)
 {
 	// (optional) change logic here for different hash algorithm
-	return password_hash($plain_pw, PASSWORD_DEFAULT);
+	return md5($plain_pw);
 }
 
 // Verify password
 function verify_pw($plain_pw, $hashed_pw)
 {
 	// (optional) change logic here for different hash algorithm
-	return password_verify($plain_pw, $hashed_pw);
+        return md5($plain_pw) == $hashed_pw;
 }
 
 // Activation / Forgot Password code
