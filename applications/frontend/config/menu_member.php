@@ -30,6 +30,11 @@ $config['menu'] = array(
 		'url'       => site_url('roving_equipment'),
 		'icon'      => ''
         ),
+        'reservation' => array(
+		'name'      => 'My Reservation',
+		'url'       => site_url('reservation'),
+		'icon'      => ''
+        ),
 	'logout' => array(
 		'name'      => lang('logout'),
 		'url'       => site_url('account/logout'),
