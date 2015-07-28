@@ -15,12 +15,10 @@ $(document).ready(function() {
             type: 'POST',
             data: $("#roving_search_form").serialize(),
             success: function(data) {
-                console.info(data);
                 if (Object.keys(data).length > 0) {
 
                     $("#roving_search_details").html('');
-
-                    if (Object.keys(data.furnitures).length > 0) {
+                    if (data.furnitures !== undefined) {
                         for (var ctr = 0; ctr < data.furnitures.length; ctr++) {
 
                             var html = '<div class="roving_result_row">';
@@ -36,8 +34,7 @@ $(document).ready(function() {
                             $("#roving_search_details").append(html);
                         }
                     }
-                    if (Object.keys(data.equipments).length > 0) {
-
+                    if (data.equipments !== undefined) {
                         for (var ctr = 0; ctr < data.equipments.length; ctr++) {
 
                             var html = '<div class="roving_result_row">';
@@ -71,6 +68,37 @@ $(document).ready(function() {
     $("#reserve_roving").click(function() {
         $('#model_contents').modal('show');
 
+    });
+
+
+
+
+    $('#organization').on('change', function() {
+        var csrf_name = $('input[name=csrf_name]').val();
+        var org_id = this.value;
+
+        $.post( base_url + 'roving_equipment/get_organization_group', 
+                {
+                    org_id: org_id,
+                    csrf_name: csrf_name
+                },
+        function(data) {
+            
+            if( Object.keys(data).length > 0 ){
+                if (data.sub_org !== undefined) {
+                    var html = '<option value="">Select Sub Organization</option>';
+                    for (var ctr = 0; ctr < data.sub_org.length; ctr++) {
+                        var sub_org = data.sub_org[ctr];
+                        html += '<option value="' + sub_org['id'] + '">' + sub_org['group_name'] + '</option>';
+                    }                    
+                    
+                    $("#sub_organization").html(html);
+                }
+            }
+            
+        }, 'json');
+
+        return false;
     });
 
 });

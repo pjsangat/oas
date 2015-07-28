@@ -20,6 +20,16 @@
     #roving_search_details .roving_result_row:nth-child(odd){
         background-color: #dbc59e;
     }
+    
+    .modal-content, .modal-dialog {
+        min-width: 900px;
+    }
+    .title-img1{
+        margin-bottom: 0px;
+    }
+    .modal-header{
+        padding: 0px 15px;
+    }
 </style>
 <div class="main-top">
     <div class="main">
@@ -124,9 +134,97 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"></h4>
+                <!--<h4 class="modal-title"></h4>-->
+                
+
+                <div class="row">
+                    <div class="title-img1">
+                        <div class="title"><img src="<?php echo base_url(); ?>assets/images/frontend/book1.png" alt=""/></div>
+                        <div class="title-desc">
+                            <p>Requesting Group / Individual Information</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body"></div>
+            <div class="modal-body">
+
+                <div class="" style="padding-left:25px;" id="add_activity">
+                    <div class="form-group">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <select class="form-control" id="organization" name="organization">
+                                    <option selected="selected" value="">Select Organization</option>
+                                    <?php foreach ($data['organizations'] as $organization) { ?>
+                                        <option value="<?php echo $organization['id']; ?>"><?php echo $organization['organization_name']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div id="sub_org">
+                                    <select class="form-control" name="sub_organization" id="sub_organization" style="width:400px;">
+                                        <option value="">Select Sub Organization</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="">
+                        <div class="form-group">
+                            <label for="birthday" class="col-xs-2 control-label" style="padding-top:8px;">Title Of Activity</label>
+                            <div class="col-xs-10">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Title" name="activity_name" id="activity_name"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="">
+                        <div class="form-group">
+                            <label for="birthday" class="col-xs-2 control-label" style="padding-top:8px;">Point Person</label>
+                            <div class="col-xs-10">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name" id="last_name" name="last_name"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name" id="first_name" name="first_name"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Middle Name" id="middle_name" name="middle_name"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label for="birthday" class="col-xs-2 control-label" style="padding-top:8px;">Contact Details</label>
+                            <div class="col-xs-10">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Number" id="number" name="number"/>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div  style="text-align: right;">
+                        <div class="form-group">
+                            <button style="background:#FC6F22; color:white" class="btn brn-primary" type="submit">Add New Activity</button>
+                        </div>
+                    </div>
+
+            </div>
         </div>
         <!-- /.modal-content --> 
     </div>

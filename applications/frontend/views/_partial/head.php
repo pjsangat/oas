@@ -13,8 +13,8 @@
         <link href="<?php echo base_url('assets/dist/style.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/dist/waitMe.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/styles/frontend.css'); ?>" rel="stylesheet">
-        
-        
+
+
         <?php
         if (isset($css)) {
             if (is_array($css)) {
@@ -30,9 +30,12 @@
             }
         }
         ?>
-        
+
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/dist/bootstrap.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/validate.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/dist/waitMe.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/dist/jquery.bootstrap-growl.js'); ?>"></script>
 
         <?php
         if (isset($js)) {
@@ -49,9 +52,23 @@
             }
         }
         ?>
-                <script type="text/javascript">
-                    var base_url = '<?php echo base_url(); ?>';
-                </script>
+        <script type="text/javascript">
+            var base_url = '<?php echo base_url(); ?>';
+            $(document).ready(function() {
+            });
+
+
+            function waiteme(containerid) {
+                $(containerid).waitMe({
+                    effect: 'ios',
+                    text: 'Loading...',
+                    bg: 'rgba(255,255,255,0.7)',
+                    color: '#000',
+                    sizeW: '',
+                    sizeH: ''
+                });
+            }
+        </script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
                 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
