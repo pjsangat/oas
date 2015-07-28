@@ -42,7 +42,8 @@ class Features extends MY_Controller {
 
         // CRUD table
         $crud = generate_crud('furnitures');
-        $crud->columns('name', 'active', 'created_at');
+        $crud->columns('name', 'active', 'quantity', 'use_cost', 'created_at');
+        $crud->set_rules('use_cost','Use Cost','numeric');
 //        $crud->unset_add_fields('created_by', 'created_at', 'updated_by', 'updated_at');
 //        $crud->unset_edit_fields('created_by', 'created_at', 'updated_by', 'updated_at');
 
@@ -87,7 +88,8 @@ class Features extends MY_Controller {
 
         // CRUD table
         $crud = generate_crud('equipments');
-        $crud->columns('name', 'active', 'created_at');
+        $crud->columns('name', 'active', 'quantity', 'use_cost', 'created_at');
+        $crud->set_rules('use_cost','Use Cost','numeric');
 //        $crud->unset_add_fields('created_by', 'created_at', 'updated_by', 'updated_at');
 //        $crud->unset_edit_fields('created_by', 'created_at', 'updated_by', 'updated_at');
 

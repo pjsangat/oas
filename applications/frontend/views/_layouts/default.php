@@ -1,6 +1,6 @@
 <?php $this->load->view('_partial/head'); ?>
 
-<div class="container">
+<!--<div class="container">-->
 
     <?php $this->load->view('_partial/header'); ?>
 
@@ -18,6 +18,6 @@
         </div>
     </section>
 
-</div>
+<!--</div>-->
 
 <?php $this->load->view('_partial/foot'); ?>
