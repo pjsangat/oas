@@ -29,6 +29,7 @@ class Admin extends MY_Controller {
 	{
 		// CRUD table
 		$crud = generate_crud('backend_users');
+                $crud->set_theme('datatables');
 		$crud->columns('role', 'username', 'full_name', 'active', 'created_at');
 		$crud->unset_edit_fields('password');
 		$crud->add_action('Reset Password', '', 'admin/reset_password', 'fa fa-rotate-left fa-lg');
@@ -73,4 +74,21 @@ class Admin extends MY_Controller {
 		$post_array['password'] = hash_pw($post_array['password']);
 		return $post_array;
 	}
+        
+        
+	public function user()
+	{
+		// CRUD table
+		$this->load->helper('crud');
+		$crud = generate_crud('users');
+                $crud->set_theme('datatables');
+		$crud->unset_fields('activation_code', 'forgot_password_code', 'forgot_password_time', 'created_at');
+		$crud->columns('role', 'username', 'email', 'first_name', 'last_name', 'active', 'created_at');
+		$crud->callback_before_insert(array($this, 'callback_before_create_user'));
+
+		$this->mTitle = "Users";
+		$this->mViewFile = '_partial/crud';
+		$this->mViewData['crud_data'] = $crud->render();
+	}
+	
 }

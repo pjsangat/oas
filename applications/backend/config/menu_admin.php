@@ -16,29 +16,14 @@ $config['menu'] = array(
 		'icon'      => 'fa fa-home'
 	),
 
-	'user' => array(
-		'name'      => 'Users',
-		'url'       => site_url('user'),
-		'icon'      => 'fa fa-users'
-	),
+//	'user' => array(
+//		'name'      => 'Users',
+//		'url'       => site_url('user'),
+//		'icon'      => 'fa fa-users'
+//	),
 
 	// Example to add sections with subpages
-	'about' => array(
-		'name'      => 'About',
-		'url'       => site_url('about'),
-		'icon'      => 'fa fa-cog',
-		'children'  => array(
-			'Mission'		=> site_url('about/mission'),
-			'Vision'		=> site_url('about/vision'),
-//			'Demo 3'		=> site_url('example/demo/3'),
-		)
-	),
     
-	'directory' => array(
-		'name'      => 'Directory',
-		'url'       => site_url('directories'),
-		'icon'      => 'fa fa-cog'
-	),
     
 	'features' => array(
 		'name'      => 'Features',
@@ -50,17 +35,29 @@ $config['menu'] = array(
 			'Facilities'		=> site_url('features/facilities'),
 			'Buildings'		=> site_url('features/buildings'),
 			'Equipments'		=> site_url('features/equipments'),
+			'Directories'		=> site_url('features/directories'),
 //			'Demo 3'		=> site_url('example/demo/3'),
 		)
 	),
 	// end of example
-
+    
+	'about' => array(
+		'name'      => 'About',
+		'url'       => site_url('about'),
+		'icon'      => 'fa fa-cog',
+		'children'  => array(
+			'Mission'		=> site_url('about/mission'),
+			'Vision'		=> site_url('about/vision'),
+//			'Demo 3'		=> site_url('example/demo/3'),
+		)
+	),
 	'admin' => array(
 		'name'      => 'Administration',
 		'url'       => site_url('admin'),
 		'icon'      => 'fa fa-cog',
 		'children'  => array(
 			'Backend Users'		=> site_url('admin/backend_user'),
+			'Users'		=> site_url('admin/user'),
 		)
 	),
 

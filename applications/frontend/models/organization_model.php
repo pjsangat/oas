@@ -8,6 +8,6 @@
 
 class Organization_model extends MY_Model
 {
-	public $_table = 'organization_types';
+	public $_table = 'organization_type';
 	public $return_type = 'array';
 }

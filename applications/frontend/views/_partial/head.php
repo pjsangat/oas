@@ -9,8 +9,7 @@
 
         <title><?php echo lang('website_name'); ?> - {title}</title>
 
-        <link href="<?php echo base_url('assets/dist/bootstrap.min.css'); ?>" rel="stylesheet">
-        <link href="<?php echo base_url('assets/dist/style.css'); ?>" rel="stylesheet">
+        <link href="<?php echo base_url('assets/dist/app.min.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/dist/waitMe.css'); ?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/styles/frontend.css'); ?>" rel="stylesheet">
 
@@ -67,6 +66,7 @@
                     sizeW: '',
                     sizeH: ''
                 });
+                    
             }
         </script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

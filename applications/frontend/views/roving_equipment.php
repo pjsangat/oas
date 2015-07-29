@@ -175,10 +175,10 @@
                     <div class="">
                         <div class="form-group">
                             <label for="birthday" class="col-xs-2 control-label" style="padding-top:8px;">Title Of Activity</label>
-                            <div class="col-xs-10">
+                            <div class="col-xs-10 no_pad">
                                 <div class="form-inline">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Title" name="activity_name" id="activity_name"/>
+                                        <input type="text" class="form-control" placeholder="Title" name="activity_name" id="activity_name" style="width: 400px;"/>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
                     <div class="">
                         <div class="form-group">
                             <label for="birthday" class="col-xs-2 control-label" style="padding-top:8px;">Point Person</label>
-                            <div class="col-xs-10">
+                            <div class="col-xs-10 no_pad">
                                 <div class="form-inline">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Last Name" id="last_name" name="last_name"/>
@@ -207,7 +207,7 @@
                     <div>
                         <div class="form-group">
                             <label for="birthday" class="col-xs-2 control-label" style="padding-top:8px;">Contact Details</label>
-                            <div class="col-xs-10">
+                            <div class="col-xs-10 no_pad">
                                 <div class="form-inline">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Number" id="number" name="number"/>

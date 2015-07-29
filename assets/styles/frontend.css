@@ -228,7 +228,6 @@ body{
 .title-img{
     background-color: #c39b2c;
     padding: 5px 0 2px 13px;
-    margin-bottom: 24px;
     -webkit-border-radius: 0 0 15px 0;
     -moz-border-radius: 0 0 15px 0;
     border-radius: 0 0 15px 0;			
@@ -1057,4 +1056,10 @@ p.link1 {
         float: none;
         border-right:0;
     }
+}
+
+
+
+.no_pad{
+    padding: 0px !important;
 }
