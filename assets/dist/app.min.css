@@ -2424,7 +2424,7 @@ legend {
     border: 1px solid #464545
 }
 .table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #3d3d3d
+    background-color: #fdf4e8
 }
 .table-hover>tbody>tr:hover,
 .table>tbody>tr.active>td,

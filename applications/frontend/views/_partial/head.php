@@ -33,9 +33,9 @@
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/dist/bootstrap.min.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/validate.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/dist/waitMe.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/dist/jquery.bootstrap-growl.js'); ?>"></script>
-
+        <script type="text/javascript" src="<?php echo base_url('assets/dist/waitMe.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/dist/waitMe.min.js'); ?>"></script>
         <?php
         if (isset($js)) {
             if (is_array($js)) {
@@ -56,18 +56,6 @@
             $(document).ready(function() {
             });
 
-
-            function waiteme(containerid) {
-                $(containerid).waitMe({
-                    effect: 'ios',
-                    text: 'Loading...',
-                    bg: 'rgba(255,255,255,0.7)',
-                    color: '#000',
-                    sizeW: '',
-                    sizeH: ''
-                });
-                    
-            }
         </script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>

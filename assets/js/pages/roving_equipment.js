@@ -74,7 +74,6 @@ $(document).ready(function() {
 
 
     $('#organization').on('change', function() {
-        waiteme("#sub_org");
         var csrf_name = $('input[name=csrf_name]').val();
         var org_id = this.value;
 
